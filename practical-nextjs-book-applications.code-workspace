@@ -1,0 +1,11 @@
+{
+  "folders": [
+    { "path": "." },
+    { "path": "./packages/sns-api-1" },
+    { "path": "./packages/sns-api-2" },
+    { "path": "./packages/sns-web-1" },
+    { "path": "./packages/sns-web-2" },
+    { "path": "./packages/sns-web-3" },
+    { "path": "./packages/sns-shared-ui" },
+  ],
+}
