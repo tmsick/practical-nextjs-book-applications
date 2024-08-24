@@ -1,16 +1,16 @@
-import Link from "next/link";
-import { HeadGroup } from "sns-shared-ui/src/components/HeadGroup";
-import { Heading } from "sns-shared-ui/src/components/Heading";
-import { PhotoCard } from "sns-shared-ui/src/components/PhotoCard";
-import { Section } from "sns-shared-ui/src/components/Section";
-import type { Photo } from "@/services/type";
-import { LikeButtonForm } from "./LikeButtonForm";
+import Link from "next/link"
+import { HeadGroup } from "sns-shared-ui/src/components/HeadGroup"
+import { Heading } from "sns-shared-ui/src/components/Heading"
+import { PhotoCard } from "sns-shared-ui/src/components/PhotoCard"
+import { Section } from "sns-shared-ui/src/components/Section"
+import type { Photo } from "@/services/type"
+import { LikeButtonForm } from "./LikeButtonForm"
 
 type Props = {
-  photo: Photo;
-  isOwner: boolean;
-  liked: boolean;
-};
+  photo: Photo
+  isOwner: boolean
+  liked: boolean
+}
 
 export function PhotoHero({ photo, isOwner, liked }: Props) {
   return (
@@ -33,5 +33,5 @@ export function PhotoHero({ photo, isOwner, liked }: Props) {
         />
       </Link>
     </Section>
-  );
+  )
 }

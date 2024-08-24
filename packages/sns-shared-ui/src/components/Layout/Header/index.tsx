@@ -1,25 +1,21 @@
-"use client";
+"use client"
 
-import React from "react";
-import clsx from "clsx";
-import Link from "next/link";
-import { signIn, signOut } from "next-auth/react";
-import { Avatar } from "../../Avatar";
-import { Button } from "../../Button";
-import { LinkButton } from "../../LinkButton";
-import styles from "./style.module.css";
+import React from "react"
+import clsx from "clsx"
+import Link from "next/link"
+import { signIn, signOut } from "next-auth/react"
+import { Avatar } from "../../Avatar"
+import { Button } from "../../Button"
+import { LinkButton } from "../../LinkButton"
+import styles from "./style.module.css"
 
 type Props = {
-  isLogin?: boolean;
-  showDrawerMenu?: boolean;
-  avatarImageUrl?: string | null;
-};
+  isLogin?: boolean
+  showDrawerMenu?: boolean
+  avatarImageUrl?: string | null
+}
 
-export function Header({
-  isLogin = false,
-  showDrawerMenu = true,
-  avatarImageUrl,
-}: Props) {
+export function Header({ isLogin = false, showDrawerMenu = true, avatarImageUrl }: Props) {
   return (
     <header className={styles.header}>
       {showDrawerMenu && (
@@ -52,5 +48,5 @@ export function Header({
         </div>
       </div>
     </header>
-  );
+  )
 }

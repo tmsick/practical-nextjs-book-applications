@@ -11,7 +11,7 @@
   justify-items: center;
 }
 
-.photo>div {
+.photo > div {
   border-radius: 9999px;
   overflow: hidden;
 }
@@ -45,7 +45,6 @@
   grid-template-columns: 3fr 3fr 1fr;
   align-items: flex-end;
 }
-
 
 @media screen and (max-width: 768px) {
   .module {

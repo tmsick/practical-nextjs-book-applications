@@ -1,31 +1,31 @@
-import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
-import { AlertDialogModal } from "sns-shared-ui/src/components/AlertDialogModal";
-import { Button } from "sns-shared-ui/src/components/Button";
+import { useEffect, useRef, useState } from "react"
+import { useRouter } from "next/navigation"
+import { AlertDialogModal } from "sns-shared-ui/src/components/AlertDialogModal"
+import { Button } from "sns-shared-ui/src/components/Button"
 
 type Props = {
-  id: string;
-  closeModal: () => void;
-};
+  id: string
+  closeModal: () => void
+}
 
 export function PhotoDeleteForm({ id, closeModal }: Props) {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const router = useRouter();
-  const buttonRef = useRef<HTMLButtonElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const router = useRouter()
+  const buttonRef = useRef<HTMLButtonElement>(null)
   useEffect(() => {
-    if (!buttonRef.current) return;
-    buttonRef.current.focus();
-  }, []);
+    if (!buttonRef.current) return
+    buttonRef.current.focus()
+  }, [])
   return (
     <form
-      onSubmit={async (event) => {
-        event.preventDefault();
-        if (isSubmitting) return;
-        setIsSubmitting(true);
-        await fetch(`/api/photos/${id}`, { method: "DELETE" });
-        setIsSubmitting(false);
-        closeModal();
-        router.push("/profile");
+      onSubmit={async event => {
+        event.preventDefault()
+        if (isSubmitting) return
+        setIsSubmitting(true)
+        await fetch(`/api/photos/${id}`, { method: "DELETE" })
+        setIsSubmitting(false)
+        closeModal()
+        router.push("/profile")
       }}
     >
       <AlertDialogModal
@@ -42,12 +42,7 @@ export function PhotoDeleteForm({ id, closeModal }: Props) {
         }
         actionsNode={
           <>
-            <Button
-              type="button"
-              color="gray"
-              ref={buttonRef}
-              onClick={closeModal}
-            >
+            <Button type="button" color="gray" ref={buttonRef} onClick={closeModal}>
               キャンセル
             </Button>
             <Button type="submit">OK</Button>
@@ -55,5 +50,5 @@ export function PhotoDeleteForm({ id, closeModal }: Props) {
         }
       />
     </form>
-  );
+  )
 }

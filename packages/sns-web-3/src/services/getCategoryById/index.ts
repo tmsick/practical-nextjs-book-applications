@@ -1,11 +1,11 @@
-import { handleFailed, handleSucceed, path } from "../";
-import type { Category } from "../type";
-import type { PaginationProps } from "sns-shared-ui/src/components/Pagination";
+import { handleFailed, handleSucceed, path } from "../"
+import type { Category } from "../type"
+import type { PaginationProps } from "sns-shared-ui/src/components/Pagination"
 
 type Props = {
-  id: string;
-  revalidate?: number;
-};
+  id: string
+  revalidate?: number
+}
 
 export async function getCategoryById({
   id,
@@ -18,5 +18,5 @@ export async function getCategoryById({
     },
   })
     .then(handleSucceed)
-    .catch(handleFailed);
+    .catch(handleFailed)
 }

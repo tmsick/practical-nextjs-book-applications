@@ -1,15 +1,15 @@
-import mime from "mime-types";
-import { v4 as uuid } from "uuid";
+import mime from "mime-types"
+import { v4 as uuid } from "uuid"
 
 type Props = {
-  photoData: Blob;
-};
+  photoData: Blob
+}
 
 export async function uploadPhoto({ photoData }: Props) {
-  const name = uuid();
-  const ext = mime.extension(photoData.type);
-  const filename = encodeURIComponent(`${name}.${ext}`);
-  const fileType = encodeURIComponent(photoData.type);
+  const name = uuid()
+  const ext = mime.extension(photoData.type)
+  const filename = encodeURIComponent(`${name}.${ext}`)
+  const fileType = encodeURIComponent(photoData.type)
 
   // Get presigned URL
   const {
@@ -18,16 +18,16 @@ export async function uploadPhoto({ photoData }: Props) {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ filename, fileType }),
-  }).then((res) => res.json());
+  }).then(res => res.json())
 
   // Upload to S3
-  const formData = new FormData();
+  const formData = new FormData()
   Object.entries({ ...fields, file: photoData }).forEach(([key, value]) => {
-    formData.append(key, value as string);
-  });
+    formData.append(key, value as string)
+  })
   await fetch(url, {
     method: "POST",
     body: formData,
-  }).then(() => ({ url, filename, fields }));
-  return `${url}/${filename}`;
+  }).then(() => ({ url, filename, fields }))
+  return `${url}/${filename}`
 }

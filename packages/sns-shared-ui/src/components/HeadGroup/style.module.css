@@ -4,6 +4,6 @@
   align-items: center;
 }
 
-.headGroup>*:first-child {
+.headGroup > *:first-child {
   flex-grow: 1;
 }

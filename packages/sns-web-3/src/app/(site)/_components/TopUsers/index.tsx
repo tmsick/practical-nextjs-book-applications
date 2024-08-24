@@ -1,8 +1,8 @@
-import { Accounts } from "sns-shared-ui/src/components/Accounts";
-import { HeadGroup } from "sns-shared-ui/src/components/HeadGroup";
-import { Heading } from "sns-shared-ui/src/components/Heading";
-import { Section } from "sns-shared-ui/src/components/Section";
-import { prisma } from "@/lib/prisma";
+import { Accounts } from "sns-shared-ui/src/components/Accounts"
+import { HeadGroup } from "sns-shared-ui/src/components/HeadGroup"
+import { Heading } from "sns-shared-ui/src/components/Heading"
+import { Section } from "sns-shared-ui/src/components/Section"
+import { prisma } from "@/lib/prisma"
 
 export async function TopUsers() {
   // 【3】ユーザー一覧に使用するデータ
@@ -13,7 +13,7 @@ export async function TopUsers() {
       image: true,
       profile: { select: { screenName: true } },
     },
-  });
+  })
   return (
     <Section>
       <HeadGroup>
@@ -24,8 +24,8 @@ export async function TopUsers() {
       {users && (
         <Accounts
           users={users
-            .filter((user) => Boolean(user.profile?.screenName))
-            .map((user) => ({
+            .filter(user => Boolean(user.profile?.screenName))
+            .map(user => ({
               id: user.id,
               name: user.name,
               imageUrl: user.image,
@@ -34,5 +34,5 @@ export async function TopUsers() {
         />
       )}
     </Section>
-  );
+  )
 }

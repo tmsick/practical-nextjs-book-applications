@@ -4,29 +4,13 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": [
-    "@typescript-eslint",
-    "unused-imports"
-  ],
-  "extends": [
-    "next/core-web-vitals",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:import/recommended",
-    "prettier"
-  ],
+  "plugins": ["@typescript-eslint", "unused-imports"],
+  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "plugin:import/recommended", "prettier"],
   "rules": {
     "import/order": [
       "error",
       {
-        "groups": [
-          "builtin",
-          "external",
-          "parent",
-          "sibling",
-          "index",
-          "object",
-          "type"
-        ],
+        "groups": ["builtin", "external", "parent", "sibling", "index", "object", "type"],
         "pathGroups": [
           {
             "pattern": "react",
@@ -39,9 +23,7 @@
             "position": "before"
           }
         ],
-        "pathGroupsExcludedImportTypes": [
-          "builtin"
-        ],
+        "pathGroupsExcludedImportTypes": ["builtin"],
         "alphabetize": {
           "order": "asc"
         },

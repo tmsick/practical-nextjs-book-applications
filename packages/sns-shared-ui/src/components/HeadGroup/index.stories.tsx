@@ -1,7 +1,7 @@
-import { Button } from "../Button";
-import { Heading } from "../Heading";
-import { HeadGroup } from "./";
-import type { Meta, StoryObj } from "@storybook/react";
+import { Button } from "../Button"
+import { Heading } from "../Heading"
+import { HeadGroup } from "./"
+import type { Meta, StoryObj } from "@storybook/react"
 
 const meta = {
   component: HeadGroup,
@@ -15,9 +15,9 @@ const meta = {
       </>
     ),
   },
-} satisfies Meta<typeof HeadGroup>;
+} satisfies Meta<typeof HeadGroup>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
-export const Primary: Story = {};
+export const Primary: Story = {}

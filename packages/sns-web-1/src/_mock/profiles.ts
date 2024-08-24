@@ -1,4 +1,4 @@
-import type { Profile } from "@/services/type";
+import type { Profile } from "@/services/type"
 
 export const profiles: Profile[] = [
   {
@@ -19,4 +19,4 @@ export const profiles: Profile[] = [
     screenName: "test-hanako",
     userId: "3",
   },
-];
+]

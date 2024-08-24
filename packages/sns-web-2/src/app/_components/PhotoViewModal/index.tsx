@@ -1,23 +1,23 @@
-import { useId } from "react";
-import Link from "next/link";
-import { Heading } from "sns-shared-ui/src/components/Heading";
-import { Typography } from "sns-shared-ui/src/components/Typography";
-import { LikeButtonContainer } from "@/app/_components/LikeButtonContainer";
-import type { Photo } from "@/services/type";
-import styles from "./style.module.css";
+import { useId } from "react"
+import Link from "next/link"
+import { Heading } from "sns-shared-ui/src/components/Heading"
+import { Typography } from "sns-shared-ui/src/components/Typography"
+import { LikeButtonContainer } from "@/app/_components/LikeButtonContainer"
+import type { Photo } from "@/services/type"
+import styles from "./style.module.css"
 
-export type PhotoViewModalContent = Photo;
+export type PhotoViewModalContent = Photo
 
 type Props = PhotoViewModalContent & {
-  liked: boolean;
-  close: () => void;
-  onClickLike: (count: number) => void;
-};
+  liked: boolean
+  close: () => void
+  onClickLike: (count: number) => void
+}
 
 export function PhotoViewModal({ liked, close, onClickLike, ...photo }: Props) {
-  const modalId = useId();
-  const titleId = modalId + "-title";
-  const descriptionId = modalId + "-description";
+  const modalId = useId()
+  const titleId = modalId + "-title"
+  const descriptionId = modalId + "-description"
   return (
     <div className={styles.modal}>
       <div className={styles.overlay} onClick={close} />
@@ -28,10 +28,7 @@ export function PhotoViewModal({ liked, close, onClickLike, ...photo }: Props) {
         aria-describedby={descriptionId}
         className={styles.dialog}
       >
-        <div
-          className={styles.photo}
-          style={{ backgroundImage: `url(${photo.imageUrl})` }}
-        >
+        <div className={styles.photo} style={{ backgroundImage: `url(${photo.imageUrl})` }}>
           <LikeButtonContainer
             id={photo.id}
             className={styles.likeButton}
@@ -50,5 +47,5 @@ export function PhotoViewModal({ liked, close, onClickLike, ...photo }: Props) {
         </footer>
       </div>
     </div>
-  );
+  )
 }

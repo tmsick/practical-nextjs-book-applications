@@ -44,7 +44,7 @@
   content: "";
   width: 6px;
   height: 11px;
-  background: url('./assets/arrow-left.svg') no-repeat;
+  background: url("./assets/arrow-left.svg") no-repeat;
   display: block;
 }
 
@@ -52,12 +52,11 @@
   content: "";
   width: 6px;
   height: 11px;
-  background: url('./assets/arrow-right.svg') no-repeat;
+  background: url("./assets/arrow-right.svg") no-repeat;
   display: block;
 }
 
 @media screen and (max-width: 768px) {
-
   .pagination li a,
   .pagination li span {
     width: 32px;

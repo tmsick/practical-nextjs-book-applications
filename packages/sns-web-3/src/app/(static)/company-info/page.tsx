@@ -1,14 +1,14 @@
-import { Heading } from "sns-shared-ui/src/components/Heading";
-import { Section } from "sns-shared-ui/src/components/Section";
-import { Typography } from "sns-shared-ui/src/components/Typography";
-import { SITE_NAME } from "@/constants";
-import styles from "./style.module.css";
-import type { Metadata } from "next";
+import { Heading } from "sns-shared-ui/src/components/Heading"
+import { Section } from "sns-shared-ui/src/components/Section"
+import { Typography } from "sns-shared-ui/src/components/Typography"
+import { SITE_NAME } from "@/constants"
+import styles from "./style.module.css"
+import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: `運営企業 | ${SITE_NAME}`,
   description: "運営企業「テックピクチャーズ株式会社」の会社概要",
-};
+}
 
 export default function Page() {
   return (
@@ -17,23 +17,13 @@ export default function Page() {
         <Heading level={1} size="large">
           企業概要
         </Heading>
-        <Typography tag="p">
-          この会社概要は、Chat GPT により生成した、架空の情報です。
-        </Typography>
+        <Typography tag="p">この会社概要は、Chat GPT により生成した、架空の情報です。</Typography>
         <ul className={styles.list}>
-          <Typography tag="li">
-            会社名：テックピクチャーズ株式会社（TechPictures Inc.）
-          </Typography>
-          <Typography tag="li">
-            本社所在地：東京都中央区銀座1-1-1 グローバルビジネスビル18F
-          </Typography>
-          <Typography tag="li">
-            設立：2022年6月1日 代表者：代表取締役社長 山田 太郎
-          </Typography>
+          <Typography tag="li">会社名：テックピクチャーズ株式会社（TechPictures Inc.）</Typography>
+          <Typography tag="li">本社所在地：東京都中央区銀座1-1-1 グローバルビジネスビル18F</Typography>
+          <Typography tag="li">設立：2022年6月1日 代表者：代表取締役社長 山田 太郎</Typography>
           <Typography tag="li">従業員数：50名（2023年7月現在）</Typography>
-          <Typography tag="li">
-            主な事業内容：写真投稿型SNSアプリ「Photo Share」の開発・運営
-          </Typography>
+          <Typography tag="li">主な事業内容：写真投稿型SNSアプリ「Photo Share」の開発・運営</Typography>
         </ul>
       </Section>
       <Section>
@@ -60,11 +50,10 @@ export default function Page() {
           そのために、テックピクチャーズでは、新たなアイデアを大切にし、常に技術革新に挑戦しています。
         </Typography>
         <Typography tag="p">
-          私たちはこれからも、ユーザーの皆様と共に「Photo
-          Share」を成長させていくことを誓い、
+          私たちはこれからも、ユーザーの皆様と共に「Photo Share」を成長させていくことを誓い、
           最高のサービス提供に全力で取り組んでまいります。
         </Typography>
       </Section>
     </div>
-  );
+  )
 }

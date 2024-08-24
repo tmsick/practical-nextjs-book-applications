@@ -1,8 +1,8 @@
-import * as Layout from "sns-shared-ui/src/components/Layout";
+import * as Layout from "sns-shared-ui/src/components/Layout"
 
 type Props = {
-  children: React.ReactNode;
-};
+  children: React.ReactNode
+}
 
 export default async function SiteLayout({ children }: Props) {
   return (
@@ -13,5 +13,5 @@ export default async function SiteLayout({ children }: Props) {
       </Layout.Container>
       <Layout.Footer />
     </Layout.Root>
-  );
+  )
 }

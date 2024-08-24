@@ -1,16 +1,16 @@
-"use client";
+"use client"
 
-import { HeadGroup } from "sns-shared-ui/src/components/HeadGroup";
-import { Heading } from "sns-shared-ui/src/components/Heading";
-import { PhotoCard } from "sns-shared-ui/src/components/PhotoCard";
-import { Section } from "sns-shared-ui/src/components/Section";
-import { PhotoViewModalContainer } from "@/app/_components/PhotoViewModalContainer";
-import type { Photo } from "@/services/type";
-import styles from "./style.module.css";
+import { HeadGroup } from "sns-shared-ui/src/components/HeadGroup"
+import { Heading } from "sns-shared-ui/src/components/Heading"
+import { PhotoCard } from "sns-shared-ui/src/components/PhotoCard"
+import { Section } from "sns-shared-ui/src/components/Section"
+import { PhotoViewModalContainer } from "@/app/_components/PhotoViewModalContainer"
+import type { Photo } from "@/services/type"
+import styles from "./style.module.css"
 
 type Props = {
-  photos: Photo[];
-};
+  photos: Photo[]
+}
 
 export function TopPhotos({ photos }: Props) {
   return (
@@ -22,7 +22,7 @@ export function TopPhotos({ photos }: Props) {
           </Heading>
         </HeadGroup>
         <div className={styles.cardContainer}>
-          {photos.map((photo) => (
+          {photos.map(photo => (
             <PhotoViewModalContainer key={photo.id} photo={photo}>
               <PhotoCard {...photo} />
             </PhotoViewModalContainer>
@@ -30,5 +30,5 @@ export function TopPhotos({ photos }: Props) {
         </div>
       </Section>
     </>
-  );
+  )
 }

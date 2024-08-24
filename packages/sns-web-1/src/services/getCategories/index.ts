@@ -1,10 +1,10 @@
-import { handleFailed, handleSucceed, path } from "../";
-import type { Category } from "../type";
+import { handleFailed, handleSucceed, path } from "../"
+import type { Category } from "../type"
 
 export type GetCategoriesResponse = {
-  categories: (Omit<Category, "photos"> & { totalPhotoCount: number })[];
-};
+  categories: (Omit<Category, "photos"> & { totalPhotoCount: number })[]
+}
 
 export async function getCategories(): Promise<GetCategoriesResponse> {
-  return fetch(path(`/api/categories`)).then(handleSucceed).catch(handleFailed);
+  return fetch(path(`/api/categories`)).then(handleSucceed).catch(handleFailed)
 }

@@ -1,27 +1,27 @@
-"use client";
+"use client"
 
-import { Button } from "sns-shared-ui/src/components/Button";
-import { Label } from "sns-shared-ui/src/components/Label";
-import { LinkButton } from "sns-shared-ui/src/components/LinkButton";
-import { Section } from "sns-shared-ui/src/components/Section";
-import { Select } from "sns-shared-ui/src/components/Select";
-import { TextArea } from "sns-shared-ui/src/components/TextArea";
-import { TextField } from "sns-shared-ui/src/components/TextField";
-import type { GetCategoriesResponse } from "@/services/getCategories";
-import type { Photo } from "@/services/type";
-import { updatePhoto } from "./action";
-import styles from "./style.module.css";
+import { Button } from "sns-shared-ui/src/components/Button"
+import { Label } from "sns-shared-ui/src/components/Label"
+import { LinkButton } from "sns-shared-ui/src/components/LinkButton"
+import { Section } from "sns-shared-ui/src/components/Section"
+import { Select } from "sns-shared-ui/src/components/Select"
+import { TextArea } from "sns-shared-ui/src/components/TextArea"
+import { TextField } from "sns-shared-ui/src/components/TextField"
+import type { GetCategoriesResponse } from "@/services/getCategories"
+import type { Photo } from "@/services/type"
+import { updatePhoto } from "./action"
+import styles from "./style.module.css"
 
 type Props = {
-  photo: Photo;
-  categories: GetCategoriesResponse["categories"];
-};
+  photo: Photo
+  categories: GetCategoriesResponse["categories"]
+}
 
 export function PhotoForm({ photo, categories }: Props) {
-  const componentId = "PhotoForm";
-  const titleId = `${componentId}-title`;
-  const categoryId = `${componentId}-categoryId`;
-  const descriptionId = `${componentId}-description`;
+  const componentId = "PhotoForm"
+  const titleId = `${componentId}-title`
+  const categoryId = `${componentId}-categoryId`
+  const descriptionId = `${componentId}-description`
   return (
     <form action={updatePhoto}>
       <input type="hidden" name="photoId" value={photo.id} />
@@ -32,24 +32,14 @@ export function PhotoForm({ photo, categories }: Props) {
             <Label htmlFor={titleId} size="small" className={styles.heading}>
               タイトル
             </Label>
-            <TextField
-              id={titleId}
-              name="title"
-              defaultValue={photo.title}
-              className={styles.title}
-            />
+            <TextField id={titleId} name="title" defaultValue={photo.title} className={styles.title} />
           </Section>
           <Section>
             <Label htmlFor={categoryId} size="small" className={styles.heading}>
               カテゴリー
             </Label>
-            <Select
-              id={categoryId}
-              name="categoryId"
-              defaultValue={photo.categoryId}
-              className={styles.category}
-            >
-              {categories.map((category) => (
+            <Select id={categoryId} name="categoryId" defaultValue={photo.categoryId} className={styles.category}>
+              {categories.map(category => (
                 <option key={category.id} value={category.id}>
                   {category.label}
                 </option>
@@ -59,11 +49,7 @@ export function PhotoForm({ photo, categories }: Props) {
         </div>
         <div>
           <Section>
-            <Label
-              size="small"
-              className={styles.heading}
-              htmlFor={descriptionId}
-            >
+            <Label size="small" className={styles.heading} htmlFor={descriptionId}>
               写真の概要
             </Label>
             <TextArea
@@ -82,5 +68,5 @@ export function PhotoForm({ photo, categories }: Props) {
         <Button type="submit">写真を更新する</Button>
       </Section>
     </form>
-  );
+  )
 }

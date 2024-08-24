@@ -1,3 +1,3 @@
 export async function POST() {
-  return Response.json({ liked: true });
+  return Response.json({ liked: true })
 }

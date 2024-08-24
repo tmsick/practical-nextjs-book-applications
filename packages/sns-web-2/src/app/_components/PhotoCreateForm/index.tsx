@@ -1,27 +1,27 @@
-"use client";
+"use client"
 
-import type { FormEvent } from "react";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { Icon } from "sns-shared-ui/src/components/Icon";
-import { PhotoDndUploader } from "sns-shared-ui/src/components/PhotoDndUploader";
-import { Typography } from "sns-shared-ui/src/components/Typography";
-import { MAX_UPLOAD_PHOTO_SIZE, MAX_UPLOAD_PHOTO_WIDTH } from "@/constants";
-import { uploadPhoto } from "@/lib/s3";
-import type { GetCategoriesResponse } from "@/services/getCategories";
-import { PhotoMeta } from "./PhotoMeta";
-import styles from "./style.module.css";
+import type { FormEvent } from "react"
+import { useState } from "react"
+import { useRouter } from "next/navigation"
+import { Icon } from "sns-shared-ui/src/components/Icon"
+import { PhotoDndUploader } from "sns-shared-ui/src/components/PhotoDndUploader"
+import { Typography } from "sns-shared-ui/src/components/Typography"
+import { MAX_UPLOAD_PHOTO_SIZE, MAX_UPLOAD_PHOTO_WIDTH } from "@/constants"
+import { uploadPhoto } from "@/lib/s3"
+import type { GetCategoriesResponse } from "@/services/getCategories"
+import { PhotoMeta } from "./PhotoMeta"
+import styles from "./style.module.css"
 
 type Props = {
-  categories: GetCategoriesResponse["categories"];
-  close: () => void;
-};
+  categories: GetCategoriesResponse["categories"]
+  close: () => void
+}
 
 type State = {
-  title: string;
-  categoryId: string;
-  description: string;
-};
+  title: string
+  categoryId: string
+  description: string
+}
 
 function PhotoUploader({ onChange }: { onChange: (file: Blob) => void }) {
   return (
@@ -33,13 +33,9 @@ function PhotoUploader({ onChange }: { onChange: (file: Blob) => void }) {
       maxUploadRectSize={MAX_UPLOAD_PHOTO_WIDTH}
       onChange={onChange}
     >
-      {(isDragActive) => (
+      {isDragActive => (
         <>
-          <Icon
-            type="upload"
-            size="large"
-            color={isDragActive ? "orange" : "gray"}
-          />
+          <Icon type="upload" size="large" color={isDragActive ? "orange" : "gray"} />
           <Typography>
             ここに写真をドロップするか
             <br />
@@ -48,7 +44,7 @@ function PhotoUploader({ onChange }: { onChange: (file: Blob) => void }) {
         </>
       )}
     </PhotoDndUploader>
-  );
+  )
 }
 
 export function PhotoCreateForm({ categories, close }: Props) {
@@ -57,22 +53,22 @@ export function PhotoCreateForm({ categories, close }: Props) {
     title: "",
     categoryId: "",
     description: "",
-  });
+  })
   const handleChangeMeta = (state: State) => {
-    setState(state);
-  };
-  const [photoData, setPhotoData] = useState<Blob>();
+    setState(state)
+  }
+  const [photoData, setPhotoData] = useState<Blob>()
   const handleChangeFile = (file: Blob) => {
-    setPhotoData(file);
-  };
+    setPhotoData(file)
+  }
   // 【2】「写真を投稿する」ボタンをクリックして、投稿処理開始
-  const router = useRouter();
+  const router = useRouter()
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (!photoData) return;
+    event.preventDefault()
+    if (!photoData) return
     try {
       // 【3】アップロードした「写真 URL」を取得（A）
-      const imageUrl = await uploadPhoto({ photoData });
+      const imageUrl = await uploadPhoto({ photoData })
       // 【4】投稿内容と「写真 URL」をまとめて Route Handler に送る
       const { photo } = await fetch("/api/photos", {
         method: "POST",
@@ -83,21 +79,21 @@ export function PhotoCreateForm({ categories, close }: Props) {
           categoryId,
           description,
         }),
-      }).then((res) => {
-        if (!res.ok) throw new Error();
-        return res.json();
-      });
-      router.refresh();
-      router.push(`/photos/${photo.id}`);
+      }).then(res => {
+        if (!res.ok) throw new Error()
+        return res.json()
+      })
+      router.refresh()
+      router.push(`/photos/${photo.id}`)
     } catch (err) {
-      window.alert("写真のアップロードに失敗しました");
+      window.alert("写真のアップロードに失敗しました")
     }
-    close();
-  };
+    close()
+  }
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <PhotoUploader onChange={handleChangeFile} />
       <PhotoMeta categories={categories} onChange={handleChangeMeta} />
     </form>
-  );
+  )
 }

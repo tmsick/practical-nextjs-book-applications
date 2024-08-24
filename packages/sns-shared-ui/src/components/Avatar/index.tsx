@@ -1,11 +1,11 @@
-import React from "react";
-import clsx from "clsx";
-import styles from "./style.module.css";
+import React from "react"
+import clsx from "clsx"
+import styles from "./style.module.css"
 
 type Props = {
-  size?: "small" | "medium" | "large";
-  avatarImageUrl?: string | null;
-};
+  size?: "small" | "medium" | "large"
+  avatarImageUrl?: string | null
+}
 
 export function Avatar({ size = "medium", avatarImageUrl }: Props) {
   return (
@@ -15,5 +15,5 @@ export function Avatar({ size = "medium", avatarImageUrl }: Props) {
         style: { backgroundImage: `url(${avatarImageUrl})` },
       })}
     />
-  );
+  )
 }

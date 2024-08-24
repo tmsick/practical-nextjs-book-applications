@@ -12,10 +12,10 @@
   position: absolute;
   top: 1.2em;
   right: 1.2em;
-  background: url('./assets/arrow.svg');
+  background: url("./assets/arrow.svg");
 }
 
-.select>select {
+.select > select {
   width: 100%;
   padding: 0.8em 1.2em;
   font-size: 16px;
@@ -26,11 +26,11 @@
   appearance: none;
 }
 
-.select>select:disabled {
+.select > select:disabled {
   border-color: var(--gray-200);
   background-color: var(--gray-50);
 }
 
-.select>select:has([value=""]:checked) {
+.select > select:has([value=""]:checked) {
   color: var(--gray-400);
 }

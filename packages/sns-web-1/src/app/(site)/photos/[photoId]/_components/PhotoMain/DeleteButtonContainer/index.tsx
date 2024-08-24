@@ -1,18 +1,18 @@
-"use client";
+"use client"
 
-import type { ReactNode } from "react";
-import { Button } from "sns-shared-ui/src/components/Button";
-import { PhotoDeleteForm } from "@/app/_components/PhotoDeleteForm";
-import { useModal } from "@/app/_hooks/useModal";
+import type { ReactNode } from "react"
+import { Button } from "sns-shared-ui/src/components/Button"
+import { PhotoDeleteForm } from "@/app/_components/PhotoDeleteForm"
+import { useModal } from "@/app/_hooks/useModal"
 
 type Props = {
-  id: string;
-  className?: string;
-  children?: ReactNode;
-};
+  id: string
+  className?: string
+  children?: ReactNode
+}
 
 export function DeleteButtonContainer({ id, children }: Props) {
-  const { openModal, closeModal, isOpen } = useModal(false);
+  const { openModal, closeModal, isOpen } = useModal(false)
   return (
     <>
       <Button color="white" onClick={openModal}>
@@ -20,5 +20,5 @@ export function DeleteButtonContainer({ id, children }: Props) {
       </Button>
       {isOpen && <PhotoDeleteForm id={id} closeModal={closeModal} />}
     </>
-  );
+  )
 }

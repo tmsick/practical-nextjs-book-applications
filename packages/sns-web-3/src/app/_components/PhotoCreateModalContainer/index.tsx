@@ -1,25 +1,21 @@
-"use client";
+"use client"
 
-import type { ReactNode } from "react";
-import { ModalContainer } from "@/app/_components/ModalContainer";
-import { PhotoCreateModal } from "@/app/_components/PhotoCreateModal";
-import type { GetCategoriesResponse } from "@/services/getCategories";
-import { PhotoCreateForm } from "../PhotoCreateForm";
+import type { ReactNode } from "react"
+import { ModalContainer } from "@/app/_components/ModalContainer"
+import { PhotoCreateModal } from "@/app/_components/PhotoCreateModal"
+import type { GetCategoriesResponse } from "@/services/getCategories"
+import { PhotoCreateForm } from "../PhotoCreateForm"
 
 type Props = {
-  children: ReactNode;
-  toggleClassName?: string;
-} & GetCategoriesResponse;
+  children: ReactNode
+  toggleClassName?: string
+} & GetCategoriesResponse
 
-export function PhotoCreateModalContainer({
-  categories,
-  children,
-  toggleClassName,
-}: Props) {
+export function PhotoCreateModalContainer({ categories, children, toggleClassName }: Props) {
   return (
     <ModalContainer
       toggleClassName={toggleClassName}
-      content={(closeModal) => (
+      content={closeModal => (
         <PhotoCreateModal close={closeModal}>
           <PhotoCreateForm categories={categories} close={closeModal} />
         </PhotoCreateModal>
@@ -27,5 +23,5 @@ export function PhotoCreateModalContainer({
     >
       {children}
     </ModalContainer>
-  );
+  )
 }

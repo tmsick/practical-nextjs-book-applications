@@ -1,12 +1,12 @@
-"use client";
+"use client"
 
-import type { ReactNode } from "react";
-import styles from "./style.module.css";
+import type { ReactNode } from "react"
+import styles from "./style.module.css"
 
 type Props = {
-  close: () => void;
-  children: ReactNode;
-};
+  close: () => void
+  children: ReactNode
+}
 
 export function PhotoCreateModal({ children, close }: Props) {
   return (
@@ -16,5 +16,5 @@ export function PhotoCreateModal({ children, close }: Props) {
         {children}
       </div>
     </div>
-  );
+  )
 }

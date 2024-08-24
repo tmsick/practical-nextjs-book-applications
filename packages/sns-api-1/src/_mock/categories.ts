@@ -1,4 +1,4 @@
-import type { Category } from ".";
+import type { Category } from "."
 
 export const categories: Category[] = [
   {
@@ -22,4 +22,4 @@ export const categories: Category[] = [
     description: "description",
     imageUrl: "/images/no-image.jpg",
   },
-];
+]

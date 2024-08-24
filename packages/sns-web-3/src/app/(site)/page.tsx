@@ -1,11 +1,11 @@
-import { TopCategories } from "./_components/TopCategories";
-import { TopPhotos } from "./_components/TopPhotos";
-import { TopUsers } from "./_components/TopUsers";
-import styles from "./style.module.css";
+import { TopCategories } from "./_components/TopCategories"
+import { TopPhotos } from "./_components/TopPhotos"
+import { TopUsers } from "./_components/TopUsers"
+import styles from "./style.module.css"
 
 type Props = {
-  searchParams: { [key: string]: string | string[] | undefined };
-};
+  searchParams: { [key: string]: string | string[] | undefined }
+}
 
 export default async function Page({ searchParams }: Props) {
   // 【1】【2】【3】のデータ取得がなくなっている
@@ -19,5 +19,5 @@ export default async function Page({ searchParams }: Props) {
         <TopUsers />
       </aside>
     </div>
-  );
+  )
 }

@@ -4,12 +4,12 @@
   border-top: 1px solid var(--gray-200);
 }
 
-.content>div:first-child {
+.content > div:first-child {
   min-width: 380px;
   border-right: 1px solid var(--gray-200);
 }
 
-.content>div:last-child {
+.content > div:last-child {
   flex-grow: 1;
 }
 
@@ -35,11 +35,11 @@
   border-top: 1px solid var(--gray-200);
 }
 
-.action>a {
+.action > a {
   width: 25%;
 }
 
-.action>button {
+.action > button {
   width: 35%;
 }
 
@@ -48,7 +48,7 @@
     flex-direction: column;
   }
 
-  .content>div:first-child {
+  .content > div:first-child {
     min-width: inherit;
     border: none;
   }
@@ -61,8 +61,8 @@
     height: 120px;
   }
 
-  .action>a,
-  .action>button {
+  .action > a,
+  .action > button {
     width: 50%;
   }
 }

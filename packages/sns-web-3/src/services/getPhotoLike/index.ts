@@ -1,17 +1,13 @@
-import { handleFailed, handleSucceed, path } from "../";
+import { handleFailed, handleSucceed, path } from "../"
 
 type Props = {
-  userId: string;
-  photoId: string;
-  revalidate?: number;
-};
+  userId: string
+  photoId: string
+  revalidate?: number
+}
 
-export function getPhotoLike({
-  userId,
-  photoId,
-  revalidate,
-}: Props): Promise<{ liked: boolean }> {
-  const searchParams = new URLSearchParams({ userId });
+export function getPhotoLike({ userId, photoId, revalidate }: Props): Promise<{ liked: boolean }> {
+  const searchParams = new URLSearchParams({ userId })
   return fetch(path(`/api/photos/${photoId}/like?${searchParams}`), {
     next: {
       tags: [`photos/${photoId}`],
@@ -19,5 +15,5 @@ export function getPhotoLike({
     },
   })
     .then(handleSucceed)
-    .catch(handleFailed);
+    .catch(handleFailed)
 }

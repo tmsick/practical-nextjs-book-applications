@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import type { ReactNode } from "react";
-import clsx from "clsx";
-import { useModal } from "@/app/_hooks/useModal";
-import styles from "./style.module.css";
+import type { ReactNode } from "react"
+import clsx from "clsx"
+import { useModal } from "@/app/_hooks/useModal"
+import styles from "./style.module.css"
 
 export function ModalContainer({
   children,
@@ -11,21 +11,18 @@ export function ModalContainer({
   defaultOpen = false,
   toggleClassName,
 }: {
-  children: ReactNode;
-  content: (closeModal: () => void) => ReactNode;
-  defaultOpen?: boolean;
-  toggleClassName?: string;
+  children: ReactNode
+  content: (closeModal: () => void) => ReactNode
+  defaultOpen?: boolean
+  toggleClassName?: string
 }) {
-  const { openModal, closeModal, isOpen } = useModal(defaultOpen);
+  const { openModal, closeModal, isOpen } = useModal(defaultOpen)
   return (
     <>
-      <button
-        onClick={openModal}
-        className={clsx(styles.toggle, toggleClassName)}
-      >
+      <button onClick={openModal} className={clsx(styles.toggle, toggleClassName)}>
         {children}
       </button>
       {isOpen && content(closeModal)}
     </>
-  );
+  )
 }

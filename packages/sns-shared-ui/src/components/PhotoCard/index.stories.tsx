@@ -1,5 +1,5 @@
-import { PhotoCard } from "./";
-import type { Meta, StoryObj } from "@storybook/react";
+import { PhotoCard } from "./"
+import type { Meta, StoryObj } from "@storybook/react"
 
 const meta = {
   component: PhotoCard,
@@ -9,32 +9,32 @@ const meta = {
     imageUrl: "/images/photo-example.jpg",
   },
   decorators: [
-    (Story) => (
+    Story => (
       <div style={{ width: "320px" }}>
         <Story />
       </div>
     ),
   ],
-} satisfies Meta<typeof PhotoCard>;
+} satisfies Meta<typeof PhotoCard>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
 export const Wide: Story = {
   args: {},
-};
+}
 
 export const Square: Story = {
   args: {
     ratio: "square",
   },
-};
+}
 
 export const Portrait: Story = {
   args: {
     ratio: "portrait",
   },
-};
+}
 
 export const ActionIcon: Story = {
   args: {
@@ -48,28 +48,28 @@ export const ActionIcon: Story = {
     },
     showMeta: false,
   },
-};
+}
 
 export const LineClamp2: Story = {
   args: {
     lineClamp: 2,
   },
-};
+}
 
 export const LineClamp3: Story = {
   args: {
     lineClamp: 3,
   },
-};
+}
 
 export const LineClamp4: Story = {
   args: {
     lineClamp: 4,
   },
-};
+}
 
 export const NoRounded: Story = {
   args: {
     rounded: false,
   },
-};
+}

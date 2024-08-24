@@ -4,8 +4,8 @@
   justify-content: center;
 }
 
-.listitem>a,
-.listitem>button {
+.listitem > a,
+.listitem > button {
   display: flex;
   width: 100%;
   height: 88px;
@@ -18,8 +18,8 @@
   cursor: pointer;
 }
 
-.listitem>a:hover,
-.listitem>button:hover {
+.listitem > a:hover,
+.listitem > button:hover {
   opacity: 0.5;
 }
 

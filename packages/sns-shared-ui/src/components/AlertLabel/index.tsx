@@ -1,11 +1,11 @@
-import React from "react";
-import { Icon } from "../Icon";
-import styles from "./style.module.css";
-import { AlertText } from "../AlertText";
+import React from "react"
+import { Icon } from "../Icon"
+import styles from "./style.module.css"
+import { AlertText } from "../AlertText"
 
 type Props = {
-  children: React.ReactNode;
-};
+  children: React.ReactNode
+}
 
 export function AlertLabel({ children }: Props) {
   return (
@@ -13,5 +13,5 @@ export function AlertLabel({ children }: Props) {
       <Icon type="alert" color="orange" size="xsmall" />
       {children}
     </AlertText>
-  );
+  )
 }

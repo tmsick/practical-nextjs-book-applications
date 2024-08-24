@@ -1,13 +1,13 @@
-import * as Layout from "sns-shared-ui/src/components/Layout";
-import { ClientRootLayout } from "../_components/ClientRootLayout";
-import { LayoutHeader } from "../_components/LayoutHeader";
-import { LayoutNavigation } from "../_components/LayoutNavigation";
-import { PhotoIdsContextProvider } from "../_components/PhotoViewNavigator/provider";
+import * as Layout from "sns-shared-ui/src/components/Layout"
+import { ClientRootLayout } from "../_components/ClientRootLayout"
+import { LayoutHeader } from "../_components/LayoutHeader"
+import { LayoutNavigation } from "../_components/LayoutNavigation"
+import { PhotoIdsContextProvider } from "../_components/PhotoViewNavigator/provider"
 
 type Props = {
-  children: React.ReactNode;
-  modal: React.ReactNode;
-};
+  children: React.ReactNode
+  modal: React.ReactNode
+}
 
 export default async function SiteLayout({ children, modal }: Props) {
   return (
@@ -26,5 +26,5 @@ export default async function SiteLayout({ children, modal }: Props) {
         <Layout.Footer />
       </ClientRootLayout>
     </PhotoIdsContextProvider>
-  );
+  )
 }

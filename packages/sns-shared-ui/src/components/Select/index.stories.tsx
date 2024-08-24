@@ -1,5 +1,5 @@
-import { Select } from "./";
-import type { Meta, StoryObj } from "@storybook/react";
+import { Select } from "./"
+import type { Meta, StoryObj } from "@storybook/react"
 
 const meta = {
   component: Select,
@@ -13,13 +13,13 @@ const meta = {
       </>
     ),
   },
-} satisfies Meta<typeof Select>;
+} satisfies Meta<typeof Select>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
-export const Primary: Story = {};
+export const Primary: Story = {}
 
 export const Disabled: Story = {
   args: { disabled: true },
-};
+}

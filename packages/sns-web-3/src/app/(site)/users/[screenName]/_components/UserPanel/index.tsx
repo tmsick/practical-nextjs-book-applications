@@ -1,12 +1,12 @@
-import { ProfilePanel } from "sns-shared-ui/src/components/ProfilePanel";
-import { getProfileFromScreenName } from "../../dataFetch";
+import { ProfilePanel } from "sns-shared-ui/src/components/ProfilePanel"
+import { getProfileFromScreenName } from "../../dataFetch"
 
 type Props = {
-  screenName: string;
-};
+  screenName: string
+}
 
 export async function UserPanel({ screenName }: Props) {
-  const profile = await getProfileFromScreenName(screenName);
+  const profile = await getProfileFromScreenName(screenName)
   return (
     <ProfilePanel
       imageUrl={profile.user.image}
@@ -14,5 +14,5 @@ export async function UserPanel({ screenName }: Props) {
       screenName={profile.screenName || ""}
       bio={profile.bio || ""}
     />
-  );
+  )
 }

@@ -1,13 +1,13 @@
-import * as Layout from "sns-shared-ui/src/components/Layout";
-import { getCategories } from "@/services/getCategories";
-import { LayoutNavigation } from "../_components/LayoutNavigation";
+import * as Layout from "sns-shared-ui/src/components/Layout"
+import { getCategories } from "@/services/getCategories"
+import { LayoutNavigation } from "../_components/LayoutNavigation"
 
 type Props = {
-  children: React.ReactNode;
-};
+  children: React.ReactNode
+}
 
 export default async function SiteLayout({ children }: Props) {
-  const { categories } = await getCategories();
+  const { categories } = await getCategories()
   return (
     <Layout.Root>
       <Layout.Header />
@@ -17,5 +17,5 @@ export default async function SiteLayout({ children }: Props) {
       </Layout.Container>
       <Layout.Footer />
     </Layout.Root>
-  );
+  )
 }

@@ -1,15 +1,15 @@
-import Link from "next/link";
-import { HeadGroup } from "sns-shared-ui/src/components/HeadGroup";
-import { Heading } from "sns-shared-ui/src/components/Heading";
-import { LinkButton } from "sns-shared-ui/src/components/LinkButton";
-import { PhotoCard } from "sns-shared-ui/src/components/PhotoCard";
-import { Section } from "sns-shared-ui/src/components/Section";
-import { getCategories } from "@/services/getCategories";
-import styles from "./style.module.css";
+import Link from "next/link"
+import { HeadGroup } from "sns-shared-ui/src/components/HeadGroup"
+import { Heading } from "sns-shared-ui/src/components/Heading"
+import { LinkButton } from "sns-shared-ui/src/components/LinkButton"
+import { PhotoCard } from "sns-shared-ui/src/components/PhotoCard"
+import { Section } from "sns-shared-ui/src/components/Section"
+import { getCategories } from "@/services/getCategories"
+import styles from "./style.module.css"
 
 export async function TopCategories() {
   // 【2】カテゴリー一覧に使用するデータ
-  const data = await getCategories();
+  const data = await getCategories()
   return (
     <Section>
       <HeadGroup>
@@ -21,7 +21,7 @@ export async function TopCategories() {
         </LinkButton>
       </HeadGroup>
       <div className={styles.cardContainer}>
-        {data.categories.map((category) => (
+        {data.categories.map(category => (
           <Link href={`/categories/${category.name}`} key={category.id}>
             <PhotoCard
               imageUrl={category.imageUrl}
@@ -34,5 +34,5 @@ export async function TopCategories() {
         ))}
       </div>
     </Section>
-  );
+  )
 }

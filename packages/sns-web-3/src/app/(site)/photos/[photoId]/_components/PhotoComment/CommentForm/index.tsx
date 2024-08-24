@@ -1,13 +1,13 @@
-"use client";
+"use client"
 
-import type { RefObject } from "react";
-import { CommentBox } from "sns-shared-ui/src/components/CommentBox";
+import type { RefObject } from "react"
+import { CommentBox } from "sns-shared-ui/src/components/CommentBox"
 
 type Props = {
-  photoId: string;
-  formRef: RefObject<HTMLFormElement>;
-  formAction: (formData: FormData) => Promise<void>;
-};
+  photoId: string
+  formRef: RefObject<HTMLFormElement>
+  formAction: (formData: FormData) => Promise<void>
+}
 
 export function CommentForm({ photoId, formRef, formAction }: Props) {
   return (
@@ -20,5 +20,5 @@ export function CommentForm({ photoId, formRef, formAction }: Props) {
         }}
       />
     </form>
-  );
+  )
 }

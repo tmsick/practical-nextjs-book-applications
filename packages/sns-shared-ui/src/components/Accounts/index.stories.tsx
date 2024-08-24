@@ -1,5 +1,5 @@
-import { Accounts } from "./";
-import type { Meta, StoryObj } from "@storybook/react";
+import { Accounts } from "./"
+import type { Meta, StoryObj } from "@storybook/react"
 
 const meta = {
   component: Accounts,
@@ -25,9 +25,9 @@ const meta = {
       },
     ],
   },
-} satisfies Meta<typeof Accounts>;
+} satisfies Meta<typeof Accounts>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
-export const Primary: Story = {};
+export const Primary: Story = {}

@@ -1,5 +1,5 @@
-import * as Layout from "sns-shared-ui/src/components/Layout";
-import { NotFound } from "sns-shared-ui/src/components/NotFound";
+import * as Layout from "sns-shared-ui/src/components/Layout"
+import { NotFound } from "sns-shared-ui/src/components/NotFound"
 
 export default async function NotFoundPage() {
   return (
@@ -12,5 +12,5 @@ export default async function NotFoundPage() {
       </Layout.Container>
       <Layout.Footer />
     </Layout.Root>
-  );
+  )
 }

@@ -1,38 +1,38 @@
-"use client";
+"use client"
 
-import { useEffect, useId, useState } from "react";
-import { useFormStatus } from "react-dom";
-import { Button } from "sns-shared-ui/src/components/Button";
-import { Label } from "sns-shared-ui/src/components/Label";
-import { Select } from "sns-shared-ui/src/components/Select";
-import { TextArea } from "sns-shared-ui/src/components/TextArea";
-import { TextField } from "sns-shared-ui/src/components/TextField";
-import type { GetCategoriesResponse } from "@/services/getCategories";
-import styles from "./style.module.css";
+import { useEffect, useId, useState } from "react"
+import { useFormStatus } from "react-dom"
+import { Button } from "sns-shared-ui/src/components/Button"
+import { Label } from "sns-shared-ui/src/components/Label"
+import { Select } from "sns-shared-ui/src/components/Select"
+import { TextArea } from "sns-shared-ui/src/components/TextArea"
+import { TextField } from "sns-shared-ui/src/components/TextField"
+import type { GetCategoriesResponse } from "@/services/getCategories"
+import styles from "./style.module.css"
 
 type Props = {
-  onChange: (state: State) => void;
-} & GetCategoriesResponse;
+  onChange: (state: State) => void
+} & GetCategoriesResponse
 type State = {
-  title: string;
-  categoryId: string;
-  description: string;
-};
+  title: string
+  categoryId: string
+  description: string
+}
 
 export function PhotoMeta({ categories, onChange }: Props) {
-  const componentId = useId();
-  const titleId = `${componentId}-title`;
-  const categoryId = `${componentId}-category`;
-  const descriptionId = `${componentId}-description`;
+  const componentId = useId()
+  const titleId = `${componentId}-title`
+  const categoryId = `${componentId}-category`
+  const descriptionId = `${componentId}-description`
   const [state, setState] = useState<State>({
     title: "",
     categoryId: "",
     description: "",
-  });
-  const { pending } = useFormStatus();
+  })
+  const { pending } = useFormStatus()
   useEffect(() => {
-    onChange(state);
-  }, [state, onChange]);
+    onChange(state)
+  }, [state, onChange])
 
   return (
     <div className={styles.meta}>
@@ -45,8 +45,8 @@ export function PhotoMeta({ categories, onChange }: Props) {
           id={titleId}
           value={state.title}
           placeholder={"タイトルを入力..."}
-          onChange={(event) => {
-            setState({ ...state, title: event.target.value });
+          onChange={event => {
+            setState({ ...state, title: event.target.value })
           }}
         />
       </div>
@@ -58,12 +58,12 @@ export function PhotoMeta({ categories, onChange }: Props) {
           <Select
             className={styles.select}
             id={categoryId}
-            onChange={(event) => {
-              setState({ ...state, categoryId: event.target.value });
+            onChange={event => {
+              setState({ ...state, categoryId: event.target.value })
             }}
           >
             <option value="">カテゴリーを選択...</option>
-            {categories.map((category) => (
+            {categories.map(category => (
               <option key={category.id} value={category.id}>
                 {category.label}
               </option>
@@ -79,8 +79,8 @@ export function PhotoMeta({ categories, onChange }: Props) {
           className={styles.description}
           id={descriptionId}
           placeholder={"写真の概要を入力..."}
-          onChange={(event) => {
-            setState({ ...state, description: event.target.value });
+          onChange={event => {
+            setState({ ...state, description: event.target.value })
           }}
         />
       </div>
@@ -88,5 +88,5 @@ export function PhotoMeta({ categories, onChange }: Props) {
         写真を投稿する
       </Button>
     </div>
-  );
+  )
 }

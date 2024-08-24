@@ -1,14 +1,14 @@
-import { HeadGroup } from "sns-shared-ui/src/components/HeadGroup";
-import { Heading } from "sns-shared-ui/src/components/Heading";
-import { Section } from "sns-shared-ui/src/components/Section";
-import type { Photo } from "@/services/type";
-import { CommentForm } from "./CommentForm";
-import { CommentList } from "./CommentList";
+import { HeadGroup } from "sns-shared-ui/src/components/HeadGroup"
+import { Heading } from "sns-shared-ui/src/components/Heading"
+import { Section } from "sns-shared-ui/src/components/Section"
+import type { Photo } from "@/services/type"
+import { CommentForm } from "./CommentForm"
+import { CommentList } from "./CommentList"
 
 type Props = {
-  photo: Photo;
-  userId?: string;
-};
+  photo: Photo
+  userId?: string
+}
 
 export function PhotoComment({ photo, userId }: Props) {
   return (
@@ -32,5 +32,5 @@ export function PhotoComment({ photo, userId }: Props) {
         <CommentList photo={photo} />
       </Section>
     </div>
-  );
+  )
 }

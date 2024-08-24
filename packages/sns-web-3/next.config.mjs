@@ -14,6 +14,6 @@ const nextConfig = {
     ],
   },
   transpilePackages: ["sns-shared-ui"],
-};
+}
 
-export default nextConfig;
+export default nextConfig

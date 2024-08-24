@@ -1,9 +1,9 @@
-import { handleFailed, handleSucceed, path } from "../";
+import { handleFailed, handleSucceed, path } from "../"
 
 export function postPhotoComment(payload: {
-  photoId: string;
-  comment: string;
-  commentatorId: string;
+  photoId: string
+  comment: string
+  commentatorId: string
 }): Promise<{ message: string }> {
   return fetch(path(`/api/photos/${payload.photoId}/comments`), {
     method: "POST",
@@ -11,5 +11,5 @@ export function postPhotoComment(payload: {
     body: JSON.stringify(payload),
   })
     .then(handleSucceed)
-    .catch(handleFailed);
+    .catch(handleFailed)
 }

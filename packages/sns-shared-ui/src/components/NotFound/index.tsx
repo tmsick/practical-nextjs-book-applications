@@ -1,7 +1,7 @@
-import { Heading } from "../Heading";
-import { LinkButton } from "../LinkButton";
-import { Typography } from "../Typography";
-import styles from "./style.module.css";
+import { Heading } from "../Heading"
+import { LinkButton } from "../LinkButton"
+import { Typography } from "../Typography"
+import styles from "./style.module.css"
 
 export function NotFound() {
   return (
@@ -16,5 +16,5 @@ export function NotFound() {
         </LinkButton>
       </p>
     </div>
-  );
+  )
 }

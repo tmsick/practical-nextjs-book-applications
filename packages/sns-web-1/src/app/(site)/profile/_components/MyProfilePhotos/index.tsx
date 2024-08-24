@@ -1,18 +1,18 @@
-"use client";
+"use client"
 
-import { CardContainer } from "sns-shared-ui/src/components/CardContainer";
-import { HeadGroup } from "sns-shared-ui/src/components/HeadGroup";
-import { Heading } from "sns-shared-ui/src/components/Heading";
-import { PhotoCard } from "sns-shared-ui/src/components/PhotoCard";
-import { Section } from "sns-shared-ui/src/components/Section";
-import { Typography } from "sns-shared-ui/src/components/Typography";
-import { PhotoViewModalContainer } from "@/app/_components/PhotoViewModalContainer";
-import type { Photo } from "@/services/type";
-import styles from "./style.module.css";
+import { CardContainer } from "sns-shared-ui/src/components/CardContainer"
+import { HeadGroup } from "sns-shared-ui/src/components/HeadGroup"
+import { Heading } from "sns-shared-ui/src/components/Heading"
+import { PhotoCard } from "sns-shared-ui/src/components/PhotoCard"
+import { Section } from "sns-shared-ui/src/components/Section"
+import { Typography } from "sns-shared-ui/src/components/Typography"
+import { PhotoViewModalContainer } from "@/app/_components/PhotoViewModalContainer"
+import type { Photo } from "@/services/type"
+import styles from "./style.module.css"
 
 type Props = {
-  photos: Photo[];
-};
+  photos: Photo[]
+}
 export function MyProfilePhotos({ photos }: Props) {
   return (
     <div className={styles.page}>
@@ -24,7 +24,7 @@ export function MyProfilePhotos({ photos }: Props) {
         </HeadGroup>
         {photos.length > 0 ? (
           <CardContainer>
-            {photos.map((photo) => (
+            {photos.map(photo => (
               <PhotoViewModalContainer photo={photo} key={photo.id}>
                 <PhotoCard {...photo} />
               </PhotoViewModalContainer>
@@ -35,5 +35,5 @@ export function MyProfilePhotos({ photos }: Props) {
         )}
       </Section>
     </div>
-  );
+  )
 }

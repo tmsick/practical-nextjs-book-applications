@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "next/link";
-import { Typography } from "../../Typography";
-import styles from "./style.module.css";
+import React from "react"
+import Link from "next/link"
+import { Typography } from "../../Typography"
+import styles from "./style.module.css"
 
 export function Footer() {
   return (
@@ -18,5 +18,5 @@ export function Footer() {
         </li>
       </ul>
     </footer>
-  );
+  )
 }

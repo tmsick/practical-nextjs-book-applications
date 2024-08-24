@@ -1,4 +1,4 @@
-import type { User } from "@/services/type";
+import type { User } from "@/services/type"
 
 export const users: User[] = [
   {
@@ -16,4 +16,4 @@ export const users: User[] = [
     name: "テスト花子",
     profileId: "003",
   },
-];
+]

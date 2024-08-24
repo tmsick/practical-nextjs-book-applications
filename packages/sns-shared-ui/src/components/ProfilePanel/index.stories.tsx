@@ -1,5 +1,5 @@
-import { ProfilePanel } from "./";
-import type { Meta, StoryObj } from "@storybook/react";
+import { ProfilePanel } from "./"
+import type { Meta, StoryObj } from "@storybook/react"
 
 const meta = {
   component: ProfilePanel,
@@ -8,9 +8,9 @@ const meta = {
     screenName: "スクリーンネーム",
     bio: "自己紹介",
   },
-} satisfies Meta<typeof ProfilePanel>;
+} satisfies Meta<typeof ProfilePanel>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
-export const Primary: Story = {};
+export const Primary: Story = {}

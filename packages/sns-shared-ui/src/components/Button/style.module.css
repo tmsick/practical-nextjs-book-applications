@@ -8,7 +8,7 @@
 
 .button:disabled {
   pointer-events: none;
-  opacity: .4;
+  opacity: 0.4;
 }
 
 .xsmall {
