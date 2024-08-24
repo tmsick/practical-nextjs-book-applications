@@ -1,6 +1,4 @@
-version: "3"
 services:
-
   ps-db-user:
     image: postgres:latest
     environment:
